@@ -11,5 +11,7 @@ push.setVapidDetails(
     Vapidkeys.publicKey,
     Vapidkeys.privateKey
 );
-const sub = {};
+const sub = {endpoint: "https://fcm.googleapis.com/fcm/send/fuPW7A1sZaQ:AP…6SpWmViOFDo2HP1XHgWUL4JPxP-_V9W93GbVr9BbzqI0gZVCu",
+ expirationTime: null,
+  options: PushSubscriptionOptions};
 push.sendNotification(sub, 'test message');
