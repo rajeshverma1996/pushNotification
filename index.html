@@ -21,6 +21,11 @@
         const  push= await sw.pushManager.subscribe({
             userVisibleOnly: true,
             applicationServerKey:'BPQKJ7kUGPUpMzAx-fWO7_5gGu1MuGo-pZepNG8s_FIFo43SFxwsmN8yJxYLlTpkjjJyvutxeH-7HHBVOTY3c0M'
+        }).then(sub => {
+            console.log('sub',sub);
+        })
+        .catch(err => {
+           console.error('error, err'); 
         })
         console.log(JSON.stringify('push ',push));
     }
