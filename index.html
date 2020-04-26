@@ -6,7 +6,7 @@
     <title>Web-push</title>
 </head>
 <body>
-    <button (onclick)="subscribe()">Subscribe</button>
+    <button onclick="subscribe()">Subscribe</button>
 </body>
 <script>
     addEventListener('load',async() => {
@@ -16,6 +16,7 @@
 
 
     async function subscribe(){
+        console.log('button click');
         const sw = await navigator.serviceWorker.ready;
         const  push= await sw.pushManager.subscribe({
             userVisibleOnly: true,
