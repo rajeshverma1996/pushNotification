@@ -20,7 +20,7 @@
         let sw = await navigator.serviceWorker.ready;
         let  push= await sw.pushManager.subscribe({
             userVisibleOnly: true,
-            applicationServerKey:'BPQKJ7kUGPUpMzAx-fWO7_5gGu1MuGo-pZepNG8s_FIFo43SFxwsmN8yJxYLlTpkjjJyvutxeH-7HHBVOTY3c0M'
+            applicationServerKey:'BBJddBQoBD7WWbMuVvxj2U8KhTgvCPlgow1pRUSLdfT-yNBZSJkviFD_5pN2kYz-gkZcPr3Jey5i8Lqsd4R3WOQ'
         }).then(sub => {
             console.log('sub',sub);
             console.log('sub',JSON.stringify(sub));

@@ -1,5 +1,10 @@
 var push = require('web-push');
-// const GenerateVapidkeys = push.generateVAPIDKeys();
+ const GenerateVapidkeys = push.generateVAPIDKeys();
+ console.log('vapidkeys ',GenerateVapidkeys);
+const vapidkeys1  = {
+    publicKey: 'BBJddBQoBD7WWbMuVvxj2U8KhTgvCPlgow1pRUSLdfT-yNBZSJkviFD_5pN2kYz-gkZcPr3Jey5i8Lqsd4R3WOQ',
+    privateKey: 'inp8prFVh3wW0p6s6XcRcpZo2LfPWdJrUPWIKOXHFcs'
+  }
 const Vapidkeys = {
     publicKey: 'BPQKJ7kUGPUpMzAx-fWO7_5gGu1MuGo-pZepNG8s_FIFo43SFxwsmN8yJxYLlTpkjjJyvutxeH-7HHBVOTY3c0M',
     privateKey: 'kKsvz59v2l-hnhpZbcB5b67ObSJWRvLAsHxaZzGkM_o'
@@ -8,15 +13,20 @@ const Vapidkeys = {
 console.log('vapidkeys ',Vapidkeys);
 push.setVapidDetails(
     'mailto:rajeshkumarcse1996@gmail.com',
-    Vapidkeys.publicKey,
-    Vapidkeys.privateKey
+    vapidkeys1.publicKey,
+    vapidkeys1.privateKey
 );
-const sub = {"endpoint":"https://fcm.googleapis.com/fcm/send/fuPW7A1sZaQ:APA91bFFLSq4BI6BcAb2hX8dao0kTp_M7TQkP6Rh562MEEPlYnevdUxBeuqLbuF6LczVK65IIPoTfhCp-VZbY3kqJYN6SpWmViOFDo2HP1XHgWUL4JPxP-_V9W93GbVr9BbzqI0gZVCu",
-"expirationTime":null,
-"keys":
-{
-    "p256dh":"BCf8iipAAbzIVgWxeAf9TnU7b7O_o1B-pSjcx_zZuVBruHbBpO8lUyenuPezbLAH5W7Wf89ooMmbj7eywYu7m-I",
-    "auth":"2V86CJHchg8LSIhd-WcMkA"
+const sub = {
+    "endpoint":"https://fcm.googleapis.com/fcm/send/caU1C_83wbs:APA91bEmOPzyFY-n1ghfLUqGlrRZjJo46jokBhiZcn_sv6j4DKe4pX4JfvPVNd0w7ZDlG4S_bWwiY_iNWWntybgpFSagMOI6Gk_AxyLpHNNZXppjR4JCirPRRUWDl0DnoaV6fO2LMueC",
+"keys":{
+    "p256dh":"BC4J_eysGy92GCQo1onULR39QdNp7KMc1xTJ_YlagIkxFC9xLV-nKFzB0VtyCShwwjXjKMcyOSn2WTd4hXswfWM",
+    "auth":"hyKs57LudgLtNFw0ltgGBA"
 }
-            };
-push.sendNotification(sub, 'test message');
+}
+push.sendNotification(sub, 'test message')
+.then(sub => {
+    console.log(sub);
+}).catch(err => {
+    console.error(err);
+});
+
